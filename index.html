@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liveliness Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+    <div id="error-container" style="display: none;">
+        <h1>Error</h1>
+        <p>No eventId and userId found in the URL. Please provide valid Ids to access the content.</p>
+    </div>
+    <div class="hero-container content">
+        <img id="club-photo" src="" alt="">
+    </div>
+    <div class="club-container">
+        <div class="club-info">
+            <div class="club-img content">
+                <img id="club-avatar" src="" alt="">
+            </div>
+            <div class="club-btns">
+                <a href="" id="join-club">Join Club</a>
+                <a href="" id="share-club">Share</a>
+            </div>
+        </div>
+        <div class="club-desc">
+            <h2 id="club-title" class="content"></h2>
+            <p id="club-cat" class="content"></p>
+            <h3 id="userBio" class="content"></h3>
+            <span id="toggleButton">See More</span>
+            <div class="club-vis content">
+                <h2 id="club-type"></h2>
+                <img src="./assets/images/dot.svg" alt="">
+                <div class="members">
+                    <h2 id="total-members"></h2>
+                    <p id="member-text">Members</p>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="club-socials content">
+            <a href="#"><img src="./assets/images/instagram.svg" alt=""></a>
+            <a href="#"><img src="./assets/images/tiktok.svg" alt=""></a>
+            <a href="#"><img src="./assets/images/youtube.svg" alt=""></a>
+            <a href="#"><img src="./assets/images/web.svg" alt=""></a>
+        </div> -->
+        <div class="events">
+            <div class="events-header">
+                <h2>Calendar</h2>
+                <a href="" id="events-seeAll">See all</a>
+            </div>
+            <div class="events-content" id="eventsContainer">
+                <div class="event-card content"></div>
+                <div class="event-card content"></div>
+                <div class="event-card content"></div>
+                <div class="event-card content"></div>
+            </div>
+        </div>
+        <div class="members-container">
+            <div class="events-header">
+                <h2>Members</h2>
+                <a href="" id="members-seeAll">See all</a>
+            </div>
+            <div class="members-content">
+                <div class="member-circle content"></div>
+                <div class="member-circle content"></div>
+                <div class="member-circle content"></div>
+                <div class="member-circle content"></div>
+                <div class="member-circle content"></div>
+                <div class="member-circle content"></div>
+                <div class="member-circle member-plus content"></div>
+            </div>
+        </div>
+        <a href="" id="join-groupChat">
+            <div class="group-chat content">
+                <div class="join-chat">
+                    <img src="./assets/images/chat.svg" alt="">
+                    <h2>Join the group chat</h2>
+                </div>
+                <img src="./assets/images/arrow-right.svg" alt="">
+            </div>
+        </a>
+        <div class="annoucement-container">
+            <h2>Annoucements</h2>
+            <div id="clubs">
+                <div class="club-card content"></div>
+            </div>
+        </div>
+        <div class="location-container">
+            <h2>Location</h2>
+            <div class="location-card content">
+                <img src="./assets/images/pin.svg" alt="">
+                <h2 id="location"></h2>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <a href="https://liveliness.onelink.me/cIZi/qxdqgiru">
+            <img src="./assets/images/logo.svg" alt="LINMO">
+        </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/scripts.js"></script>
+</body>
+
+</html>

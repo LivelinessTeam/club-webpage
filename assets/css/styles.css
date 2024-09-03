@@ -1,0 +1,453 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 768px;
+    margin: 0 auto;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    font-family: "Inter", sans-serif;
+    background-color: #000;
+    font-optical-sizing: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+.shimmer-effect {
+    background: linear-gradient(90deg, #cecece 25%, #e0e0e0 50%, #cecece 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 8px;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+h2.shimmer-effect,
+p.shimmer-effect,
+span.shimmer-effect {
+    width: 100%;
+    height: 20px;
+    display: inline-block;
+}
+
+.hero-container.content.shimmer-effect {
+    border-radius: 0;
+}
+
+#club-title.content.shimmer-effect {
+    margin-bottom: 8px;
+}
+
+.club-card img {
+    width: 36%;
+}
+
+.club-card .club-text {
+    flex-grow: 1;
+}
+
+#error-container {
+    color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 40px;
+    text-align: center;
+}
+
+.hero-container {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+}
+
+.club-container {
+    padding: 0 16px;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.club-info {
+    display: flex;
+    position: relative;
+    justify-content: end;
+    padding-top: 16px;
+}
+
+.club-img {
+    position: absolute;
+    left: 0;
+    top: -30px;
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    border: 4px solid #141318;
+    border-radius: 8px;
+}
+
+.club-img img {
+    width: 100%;
+}
+
+.club-btns {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.club-btns a {
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 18px;
+}
+
+.club-btns a:nth-child(1) {
+    background-color: #fff;
+    color: #141318;
+    padding: 8px 22px;
+}
+
+.club-btns a:nth-child(2) {
+    border: 1px solid #807D8F;
+    background-color: #141318;
+    color: #fff;
+    padding: 8px 16px;
+}
+
+.club-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.club-desc h2 {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 28px;
+    color: #fff;
+}
+
+.club-desc #club-cat {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #807D8F;
+    padding-bottom: 6px;
+}
+
+.club-desc h3 {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    color: #E7E7E7;
+}
+
+.upcoming-events {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    color: #E7E7E7;
+    text-align: center;
+    border: 1px solid #2F2D36;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+#userBio {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    /* Limit to two lines */
+    -webkit-box-orient: vertical;
+    max-height: 3em;
+    /* height based on 2 lines */
+}
+
+.club-desc.expanded #userBio {
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    /* Remove the line clamp */
+    max-height: none;
+    /* Allow full height */
+}
+
+#toggleButton {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 19px;
+    color: #E7E7E7;
+}
+
+.club-vis {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding-top: 6px;
+}
+
+.members {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.club-desc .club-vis h2 {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #fff;
+}
+
+.club-desc .club-vis .members p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #E7E7E7;
+}
+
+.club-socials {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.events,
+.members-container {
+    padding: 4px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.events-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.events-header h2 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #fff;
+}
+
+.events-header a,
+.reviews-header a {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #C2C2C2;
+}
+
+.events-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.event-card {
+    display: flex;
+    border-radius: 8px;
+    background-color: #1F1E24;
+    gap: 12px;
+    overflow: hidden;
+    padding-right: 12px;
+    align-items: center;
+    height: auto;
+}
+
+.event-card .event-photo {
+    width: 80px;
+}
+
+.event-card-content {
+    flex: 1;
+    padding: 12px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.event-card-content h2 {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    color: #DAFF00;
+}
+
+.event-card-content h1 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21px;
+    color: #fff;
+}
+
+.event-card.content.shimmer-effect {
+    height: 70px;
+}
+
+.event-card-content p {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #DADADA;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.members-content {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.members-content .member-plus {
+    background-color: #1F1F1F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.members-content .member-plus h2 {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+}
+
+.member-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.group-chat {
+    background-color: #1A1A1A;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.join-chat {
+    display: flex;
+    gap: 8px;
+}
+
+.join-chat h2 {
+    color: #D6D6D6;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.annoucement-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.annoucement-container h2 {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.annoucement-container .club-card {
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+    background-color: #1A1A1A;
+    border-radius: 8px;
+}
+
+.annoucement-container .club-card .club-text h2 {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 1px 0;
+}
+
+.annoucement-container .club-card.content.shimmer-effect {
+    height: 155px;
+}
+
+.annoucement-container .club-card .club-text p {
+    color: #DADADA;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+}
+
+.location-card h2 {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.location-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.location-container h2 {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.location-card {
+    display: flex;
+    gap: 12px;
+    background-color: #1F1E24;
+    padding: 14px 16px;
+    border-radius: 8px;
+}
+
+.footer {
+    padding: 24px 0 8px 0;
+    display: flex;
+    justify-content: center;
+}
