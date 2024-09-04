@@ -59,6 +59,7 @@ span.shimmer-effect {
 
 .club-card img {
     width: 36%;
+    border-radius: 8px;
 }
 
 .club-card .club-text {
@@ -313,6 +314,13 @@ span.shimmer-effect {
     font-weight: 700;
     line-height: 21px;
     color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
 }
 
 .event-card.content.shimmer-effect {
