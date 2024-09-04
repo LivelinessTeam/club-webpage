@@ -165,7 +165,7 @@ if (!eventId || !clubId) {
                 <h1>${event.title}</h1>
                 <p>${event.trainingLocationString}</p>
             </div>
-            <a href="https://event.linmo.app/?eventId=${event.uid}"><img src="./assets/images/plus.svg" alt="More"></a>
+            <a href="https://event.linmo.app/?eventId=${event.trainingId}"><img src="./assets/images/plus.svg" alt="More"></a>
         `;
 
             container.appendChild(eventCard);
