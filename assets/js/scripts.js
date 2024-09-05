@@ -1,16 +1,16 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 
-const eventId = urlParams.get("eventId");
+const userId = urlParams.get("userId");
 const clubId = urlParams.get("clubId");
 
-if (!eventId || !clubId) {
+if (!userId || !clubId) {
     document.querySelector('.hero-container').style.display = 'none';
     document.querySelector('.club-container').style.display = 'none';
     document.querySelector('.footer').style.display = 'none';
     document.getElementById('error-container').style.display = 'flex';
 } else {
-    const userEventsUrl = `https://prod-ts-liveliness-server.onrender.com/api/event/admin/${eventId}`;
+    const userEventsUrl = `https://prod-ts-liveliness-server.onrender.com/api/event/admin/${userId}`;
     const userClubUrl = `https://prod-ts-liveliness-server.onrender.com/api/club/${clubId}`;
     const clubMembersUrl = `https://prod-ts-liveliness-server.onrender.com/api/club/getAllMembers/${clubId}`;
     const clubUrl = `https://prod-ts-liveliness-server.onrender.com/api/post/club/${clubId}`;
