@@ -134,7 +134,7 @@ if (!userId || !clubId) {
 
     function displayEvents(events) {
         const now = new Date();
-        const upcomingEvents = events.filter(event => new Date(event.trainingStartDateTime) > now);
+        const upcomingEvents = events.filter(event => !event.deleted && new Date(event.trainingStartDateTime) > now);
 
         const container = document.getElementById('eventsContainer');
         container.innerHTML = '';
