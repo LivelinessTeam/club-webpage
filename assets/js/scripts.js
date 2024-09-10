@@ -210,6 +210,11 @@ if (!userId || !clubId) {
         const eventLastItem = events[events.length - 1];
         const creator = eventLastItem.creator.name;
 
+        if (lastItem === undefined) {
+            annoucementsContainer.innerHTML = '<p class="upcoming-events">No announcements</p>';
+            return;
+        }
+
         const newClubCard = document.createElement('div');
         newClubCard.classList.add('club-card', 'content');
 
@@ -226,7 +231,6 @@ if (!userId || !clubId) {
 
     function updateUi(userEvents, userClub, clubMembers, clubs) {
         const totalMembers = clubMembers.data.length;
-
         // UserData
         displayClubData(userClub.data, totalMembers);
 
