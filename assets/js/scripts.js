@@ -204,16 +204,27 @@ if (!userId || !clubId) {
     }
 
     function displayAnnoucements(clubs, events) {
-        const lastItem = clubs[clubs.length - 1];
         const annoucementsContainer = document.querySelector('#clubs');
         annoucementsContainer.innerHTML = '';
-        const eventLastItem = events[events.length - 1];
-        const creator = eventLastItem.creator.name;
 
-        if (lastItem === undefined) {
+        if (!clubs || clubs.length === 0) {
             annoucementsContainer.innerHTML = '<p class="upcoming-events">No announcements</p>';
             return;
         }
+
+        const lastItem = clubs[clubs.length - 1];
+        if (!lastItem) {
+            annoucementsContainer.innerHTML = '<p class="upcoming-events">No announcements</p>';
+            return;
+        }
+
+        if (!events || events.length === 0) {
+            annoucementsContainer.innerHTML = '<p class="upcoming-events">No announcements</p>';
+            return;
+        }
+        const eventLastItem = events[events.length - 1];
+
+        const creator = eventLastItem.creator.name;
 
         const newClubCard = document.createElement('div');
         newClubCard.classList.add('club-card', 'content');
