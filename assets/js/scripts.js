@@ -24,7 +24,6 @@ if (!userId || !clubId) {
                 });
             }
         });
-        document.getElementById('toggleButton').style.visibility = 'hidden';
     }
 
     function hideShimmer() {
@@ -36,7 +35,6 @@ if (!userId || !clubId) {
                 });
             }
         });
-        document.getElementById('toggleButton').style.visibility = 'visible';
 
     }
 
@@ -109,16 +107,16 @@ if (!userId || !clubId) {
         document.getElementById('location').textContent = clubData.locationString;
 
         const userBioElement = document.getElementById('userBio');
-        const toggleButton = document.getElementById('toggleButton');
+        // const toggleButton = document.getElementById('toggleButton');
         userBioElement.textContent = clubData.bio;
 
         updateSocialMediaLinks(socialLinks);
 
-        if (userBioElement.scrollHeight > userBioElement.clientHeight) {
-            toggleButton.style.display = 'inline';
-        } else {
-            toggleButton.style.display = 'none';
-        }
+        // if (userBioElement.scrollHeight > userBioElement.clientHeight) {
+        //     toggleButton.style.display = 'inline';
+        // } else {
+        //     toggleButton.style.display = 'none';
+        // }
 
         if (totalMembers > 1) {
             document.getElementById('member-text').textContent = 'Members';
@@ -126,10 +124,10 @@ if (!userId || !clubId) {
             document.getElementById('member-text').textContent = 'Member';
         }
 
-        toggleButton.addEventListener('click', () => {
-            document.querySelector('.club-desc').classList.toggle('expanded');
-            toggleButton.textContent = document.querySelector('.club-desc').classList.contains('expanded') ? 'Show Less' : 'See More';
-        });
+        // toggleButton.addEventListener('click', () => {
+        //     document.querySelector('.club-desc').classList.toggle('expanded');
+        //     toggleButton.textContent = document.querySelector('.club-desc').classList.contains('expanded') ? 'Show Less' : 'See More';
+        // });
     }
 
     function displayEvents(events) {

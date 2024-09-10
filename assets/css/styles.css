@@ -188,11 +188,11 @@ span.shimmer-effect {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
     /* Limit to two lines */
     -webkit-box-orient: vertical;
-    max-height: 3em;
+    max-height: 6em;
     /* height based on 2 lines */
 }
 
