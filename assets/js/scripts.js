@@ -53,20 +53,6 @@ if (!userId || !clubId) {
         }
     }
 
-    // function initializeSwiper(selector, paginationSelector) {
-    //     new Swiper(selector, {
-    //         slidesPerView: 'auto',
-    //         spaceBetween: 10,
-    //         pagination: {
-    //             el: paginationSelector
-    //         },
-    //     });
-    // }
-
-    // initializeSwiper('.mySwiper', '.swiper-pagination-1');
-    // initializeSwiper('.mySwiper', '.swiper-pagination-2');
-    // initializeSwiper('.mySwiper', '.swiper-pagination-3');
-
     function updateSocialMediaLinks(data) {
         const links = {
             "instagram": document.getElementById('instagramLink'),
@@ -210,32 +196,40 @@ if (!userId || !clubId) {
             return;
         }
 
-        const lastItem = clubs[clubs.length - 1];
-        if (!lastItem) {
-            annoucementsContainer.innerHTML = '<p class="upcoming-events">No announcements</p>';
-            return;
-        }
-
         if (!events || events.length === 0) {
             annoucementsContainer.innerHTML = '<p class="upcoming-events">No announcements</p>';
             return;
         }
         const eventLastItem = events[events.length - 1];
-
         const creator = eventLastItem.creator.name;
 
-        const newClubCard = document.createElement('div');
-        newClubCard.classList.add('club-card', 'content');
+        const lastThreeClubs = clubs.slice(-3);
 
-        newClubCard.innerHTML = `
-        <img src="${lastItem.images[0] || 'https://placehold.co/121x121/png?text=Image&font=Inter'}" alt="">
-        <div class="club-text">
-            <h2>${creator}</h2>
-            <p>${lastItem.caption}</p>
-        </div>
-    `;
+        lastThreeClubs.forEach((club, index) => {
+            const newClubCard = document.createElement('div');
+            newClubCard.classList.add('club-card', 'content');
+            const date = formatRelativeDate(club.createdAt);
 
-        document.getElementById('clubs').appendChild(newClubCard);
+            newClubCard.innerHTML = `
+                <div class="club-text-content">
+                    <div class="club-text">
+                        <h2>${creator}</h2>
+                        <img src="./assets/images/dot.svg" alt=""/>
+                        <h3>${date}</h3>
+                    </div>
+                    <p>${club.caption}</p>
+                </div>
+                <div class="club-image-container">
+                    <img src="${club.images[0] || 'https://placehold.co/121x121/png?text=Image&font=Inter'}" alt="">
+                </div>
+            `;
+
+            if (index < clubs.length - 1) {
+                newClubCard.classList.add('has-border');
+            }
+
+            annoucementsContainer.appendChild(newClubCard);
+        });
     }
 
     function updateUi(userEvents, userClub, clubMembers, clubs) {
