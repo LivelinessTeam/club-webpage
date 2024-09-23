@@ -203,7 +203,8 @@ if (!userId || !clubId) {
         const eventLastItem = events[events.length - 1];
         const creator = eventLastItem.creator.name;
 
-        const lastThreeClubs = clubs.slice(-3);
+        const sortedClubs = clubs.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+        const lastThreeClubs = sortedClubs.slice(-3);
 
         lastThreeClubs.forEach((club, index) => {
             const newClubCard = document.createElement('div');
@@ -219,10 +220,14 @@ if (!userId || !clubId) {
                     </div>
                     <p>${club.caption}</p>
                 </div>
-                <div class="club-image-container">
-                    <img src="${club.images[0] || 'https://placehold.co/121x121/png?text=Image&font=Inter'}" alt="">
-                </div>
             `;
+
+            if (club.images && club.images[0]) {
+                const imageContainer = document.createElement('div');
+                imageContainer.classList.add('club-image-container');
+                imageContainer.innerHTML = `<img src="${club.images[0]}" alt="">`;
+                newClubCard.appendChild(imageContainer);
+            }
 
             if (index < clubs.length - 1) {
                 newClubCard.classList.add('has-border');
